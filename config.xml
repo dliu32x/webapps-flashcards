@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="https://github.com/01org/webapps-flashcards" version="1.0" viewmodes="fullscreen">
-    <icon src="icon_128.png"/>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="https://github.com/01org/webapps-flashcards" version="2.2.0" viewmodes="fullscreen">
+    <tizen:application id="M6IUpvDcfe.Flashcards" package="M6IUpvDcfe" required_version="2.2"/>
     <content src="index.html"/>
-<name>flashcards</name>
-<tizen:application id="M6IUpvDcfe" required_version="1.0"/>
-<tizen:setting screen-orientation="landscape" contextmenu="enable"/>
+    <icon src="icon_128.png"/>
+    <name>flashcards</name>
+    <tizen:setting screen-orientation="landscape" context-menu="enable"/>
 </widget>
