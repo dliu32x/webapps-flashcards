@@ -338,6 +338,7 @@ var license_init,
      */
     FlashCards.prototype.initGame = function () {
 	this.initSound();
+	this.adventureThemeSound.pause();
 	this.backgroundSound.play();
 
         this.setGameEventListeners();
@@ -588,7 +589,7 @@ var license_init,
 	    tizen.application.getCurrentApplication().exit();
 	});
 
-	this.buttonClickSound = new GameSound("sound-buttonclick", "audio/GeneralButtonClick_wav.ogg", "none");
+	this.buttonClickSound = new GameSound("sound-buttonclick", "audio/GeneralButtonClick_wav.ogg");
 	document.getElementById("play-button").addEventListener('click', function () {
 	    self.buttonClickSound.play();
 	    self.playNowClicked();
@@ -600,13 +601,13 @@ var license_init,
      * @private
      */
     FlashCards.prototype.initSound = function () {
-	this.cardFlipSound = new GameSound("sound-cardflip", "audio/CardFlip.ogg", "none");
-	this.backgroundSound = new GameSound("sound-background", "audio/GameplayBackgroundAtmospheric_Loop.ogg", "none", true);
-	this.swooshSound = new GameSound("sound-navpane", "audio/NavPaneSwoosh.ogg", "none");
-	this.trumpetFanfareSound = new GameSound("sound-end", "audio/Replay.ogg", "none");
-	this.rightAnswerSound = new GameSound("sound-starbutton", "audio/StarButton.ogg", "none");
-	this.wrongAnswerSound = new GameSound("sound-thumbbutton", "audio/ThumbsDown.ogg", "none");
-	this.whipCrackSound = new GameSound("sound-begin", "audio/WhipCrackBegin.ogg", "none");
+	this.cardFlipSound = new GameSound("sound-cardflip", "audio/CardFlip.ogg");
+	this.backgroundSound = new GameSound("sound-background", "audio/GameplayBackgroundAtmospheric_Loop.ogg", true);
+	this.swooshSound = new GameSound("sound-navpane", "audio/NavPaneSwoosh.ogg");
+	this.trumpetFanfareSound = new GameSound("sound-end", "audio/Replay.ogg");
+	this.rightAnswerSound = new GameSound("sound-starbutton", "audio/StarButton.ogg");
+	this.wrongAnswerSound = new GameSound("sound-thumbbutton", "audio/ThumbsDown.ogg");
+	this.whipCrackSound = new GameSound("sound-begin", "audio/WhipCrackBegin.ogg");
     };
 
     /**
@@ -614,7 +615,7 @@ var license_init,
      * @private
      */
     FlashCards.prototype.init = function () {
-	this.adventureThemeSound = new GameSound("sound-intro", "audio/Theme_Loop.ogg", "auto", true);
+	this.adventureThemeSound = new GameSound("sound-intro", "audio/Theme_Loop.ogg", true);
 	this.adventureThemeSound.play();
 	this.setSplashScreenEventListeners();
 	license_init("license", "splash-screen");

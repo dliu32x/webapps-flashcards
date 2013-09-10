@@ -7,26 +7,25 @@
  *
  */
 
-function GameSound(id, src, preload, loop) {
+function GameSound(id, src, loop) {
     var audioElement = document.createElement('audio');
     audioElement.setAttribute("id", id);
     audioElement.setAttribute("src", src);
-    audioElement.setAttribute("preload", preload);
+    audioElement.setAttribute("preload", "auto");
     if (loop)
         audioElement.setAttribute("loop", "loop");
     document.body.appendChild(audioElement);
 
     var me = this;
-    this.id = id;
     this.soundobj = document.getElementById(id);
     this.enable = false;
     this.infocus = true;
-    this.loop = (loop == undefined)?false:loop;
+    loop = (loop == undefined)?false:loop;
     this.focus = function focus() {
         if(!me.infocus)
         {
             me.infocus = true;
-            if(me.enable&&me.loop)
+            if(me.enable&&loop)
                 me.soundobj.play();
         }
     };
@@ -34,7 +33,7 @@ function GameSound(id, src, preload, loop) {
         if(me.infocus)
         {
             me.infocus = false;
-            if(me.enable&&me.loop)
+            if(me.enable&&loop)
                 me.soundobj.pause();
         }
     };
@@ -43,8 +42,7 @@ function GameSound(id, src, preload, loop) {
 
     this.play = function play() {
         this.enable = true;
-        if(this.infocus)
-            this.soundobj.play();
+        this.soundobj.play();
     };
     this.pause = function pause() {
         this.enable = false;
