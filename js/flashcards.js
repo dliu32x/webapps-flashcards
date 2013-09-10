@@ -582,6 +582,12 @@ var license_init,
      */
     FlashCards.prototype.setSplashScreenEventListeners = function () {
 	var self = this;
+
+	window.addEventListener('tizenhwkey', function(e) {
+	    if (e.keyName == "back")
+	    tizen.application.getCurrentApplication().exit();
+	});
+
 	this.buttonClickSound = new GameSound("sound-buttonclick", "audio/GeneralButtonClick_wav.ogg", "none");
 	document.getElementById("play-button").addEventListener('click', function () {
 	    self.buttonClickSound.play();
