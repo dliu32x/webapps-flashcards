@@ -174,7 +174,6 @@ var license_init,
      * @private
      */
     FlashCards.prototype.shapeDeckClicked = function () {
-	this.buttonClickSound.play();
 	this.navPaneClicked();
 	this.setShapeDeck();
     };
@@ -217,7 +216,6 @@ var license_init,
      * @private
      */
     FlashCards.prototype.countingDeckClicked = function () {
-	this.buttonClickSound.play();
 	this.navPaneClicked();
 	this.setCountingDeck();
     };
@@ -264,7 +262,6 @@ var license_init,
      *  @private
      */
     FlashCards.prototype.spanishDeckClicked = function () {
-	this.buttonClickSound.play();
 	this.navPaneClicked();
 	this.setSpanishDeck();
     };
@@ -327,7 +324,6 @@ var license_init,
      * @private
      */
     FlashCards.prototype.colorDeckClicked = function () {
-	this.buttonClickSound.play();
 	this.navPaneClicked();
 	this.setColorDeck();
     };
@@ -526,53 +522,53 @@ var license_init,
 	starty = 0, //starting y coordinate of drag
 	isDrag = -1; //flag for qualifying drag event
 	
-	document.getElementById("nav-pane").addEventListener('click', function () {
+	document.getElementById("nav-pane").addEventListener('touchstart', function () {
 	    self.navPaneClicked();
 	}, false);
-	document.getElementById("scroll-overlay").addEventListener('mousedown', function (e) {
+	document.getElementById("scroll-overlay").addEventListener('touchstart', function (e) {
 	    starty = e.clientY;
 	    isDrag = 0; //mouse down
 	}, false);
-	document.getElementById("scroll-overlay").addEventListener('mousemove', function (e) {
+	document.getElementById("scroll-overlay").addEventListener('touchmove', function (e) {
 	    isDrag = 1; //mouse move
 	}, false);
-	document.getElementById("scroll-overlay").addEventListener('mouseup', function (e) {
+	document.getElementById("scroll-overlay").addEventListener('touchend', function (e) {
 	    if(isDrag === 1) { //if equals 1 is drag event
 		self.scrollNavPane((-1)*(starty-e.clientY));
 	    }
 	    isDrag = -1; //regardless reset endy 
 	}, false);
-	document.getElementById("shape-deck").addEventListener('click', function () {
+	document.getElementById("shape-deck").addEventListener('touchstart', function () {
 	    self.shapeDeckClicked();
 	}, false);
-	document.getElementById("color-deck").addEventListener('click', function () {
+	document.getElementById("color-deck").addEventListener('touchstart', function () {
 	    self.colorDeckClicked();
 	}, false);
-	document.getElementById("counting-deck").addEventListener('click', function () {
+	document.getElementById("counting-deck").addEventListener('touchstart', function () {
 	    self.countingDeckClicked();
 	}, false);
-	document.getElementById("spanish-deck").addEventListener('click', function () {
+	document.getElementById("spanish-deck").addEventListener('touchstart', function () {
 	    self.spanishDeckClicked();
 	}, false);
-	document.getElementById("card").addEventListener('click', function () {
+	document.getElementById("card").addEventListener('touchstart', function () {
 	    self.cardClicked();
 	}, false);
-	document.getElementById("card-answer").addEventListener('click', function () {
+	document.getElementById("card-answer").addEventListener('touchstart', function () {
 	    self.cardClicked();
 	}, false);
-	document.getElementById("wrong-button").addEventListener('click', function () {
+	document.getElementById("wrong-button").addEventListener('touchstart', function () {
 	    self.wrongButtonClicked();
 	}, false);
-	document.getElementById("right-button").addEventListener('click', function () {
+	document.getElementById("right-button").addEventListener('touchstart', function () {
 	    self.rightButtonClicked();
 	}, false);
-	document.getElementById("replay-button").addEventListener('click', function () {
+	document.getElementById("replay-button").addEventListener('touchstart', function () {
 	    self.replayButtonClicked();
 	}, false);
-	document.getElementById("help-icon").addEventListener('click', function () {
+	document.getElementById("help-icon").addEventListener('touchstart', function () {
 	    self.helpClicked();
 	}, false);
-	document.getElementById("help-close").addEventListener('click', function () {
+	document.getElementById("help-close").addEventListener('touchstart', function () {
 	    self.helpCloseClicked();
 	}, false);
     };
@@ -590,7 +586,7 @@ var license_init,
 	});
 
 	this.buttonClickSound = new GameSound("sound-buttonclick", "audio/GeneralButtonClick_wav.ogg");
-	document.getElementById("play-button").addEventListener('click', function () {
+	document.getElementById("play-button").addEventListener('touchstart', function () {
 	    self.buttonClickSound.play();
 	    self.playNowClicked();
 	}, false);

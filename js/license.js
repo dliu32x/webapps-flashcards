@@ -40,7 +40,7 @@ function license_init(id, hpageid)
     }
     request.send();
 
-    lbtn.onclick = function() {
+    lbtn.ontouchstart = function() {
         /* initialize scroll rate */
         var dY = 2;
         var t0 = 0;
@@ -90,7 +90,7 @@ function license_init(id, hpageid)
         }, 40);
     };
 
-    qbtn.onclick = function() {
+    qbtn.ontouchstart = function() {
         hpage.style.display="block";
         lpage.style.display="none";
         clearInterval(timer);
