@@ -200,24 +200,6 @@ body {
     background-image: url("../images/NavTent.png");
 }
 
-#scroll-overlay {
-    position: absolute;
-    height: 391px;
-    width: 157px;
-    left: 22px;
-    top: 90px;
-    overflow: hidden;
-}
-
-#scroll-items {
-    position: absolute;
-    cursor: pointer;
-    height: 391px;
-    width: 157px;
-    border-radius: 10px 10px 10px 10px;
-    -webkit-transition: all 1s ease-in-out;
-}
-
 #nav-pane-compass {
     position: absolute;
     width: 133px;
@@ -229,7 +211,7 @@ body {
 #shape-deck {
     position: absolute;
     left: 7px;
-    top: 40px;
+    top: 120px;
     width: 150px;
     height: 89px;
     background-image: url('../images/NavCardShapes.png');
@@ -239,7 +221,7 @@ body {
 #spanish-deck {
     position: absolute;
     left: 8px;
-    top: 120px;
+    top: 200px;
     width: 149px;
     height: 87px;
     background-image: url('../images/NavCardSpanish.png');
@@ -249,7 +231,7 @@ body {
 #color-deck {
     position: absolute;
     left: 6px;
-    top: 180px;
+    top: 260px;
     width: 151px;
     height: 93px;
     background-image: url("../images/NavCardColors.png" );
@@ -259,7 +241,7 @@ body {
 #counting-deck {
     position: absolute;
     left: 8px;
-    top: 260px;
+    top: 340px;
     width: 149px;
     height: 84px;
     background-image: url("../images/NavCardCounting.png");

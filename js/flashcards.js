@@ -506,14 +506,6 @@ var license_init,
     };
 
     /**
-     * FlashCards.scrollNavPane will scroll the navigation Pane the direction the user moves the mouse
-     * @private
-     */
-    FlashCards.prototype.scrollNavPane = function (delta) {
-	document.getElementById("scroll-items").style.webkitTransform = "translateY("+delta+"px)";
-    };
-
-    /**
      * FlashCards.setGameEventListeners sets event handlers for the game
      * @private
      */
@@ -524,19 +516,6 @@ var license_init,
 	
 	document.getElementById("nav-pane").addEventListener('touchstart', function () {
 	    self.navPaneClicked();
-	}, false);
-	document.getElementById("scroll-overlay").addEventListener('touchstart', function (e) {
-	    starty = e.clientY;
-	    isDrag = 0; //mouse down
-	}, false);
-	document.getElementById("scroll-overlay").addEventListener('touchmove', function (e) {
-	    isDrag = 1; //mouse move
-	}, false);
-	document.getElementById("scroll-overlay").addEventListener('touchend', function (e) {
-	    if(isDrag === 1) { //if equals 1 is drag event
-		self.scrollNavPane((-1)*(starty-e.clientY));
-	    }
-	    isDrag = -1; //regardless reset endy 
 	}, false);
 	document.getElementById("shape-deck").addEventListener('touchstart', function () {
 	    self.shapeDeckClicked();
