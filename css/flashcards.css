@@ -27,6 +27,7 @@ html {
 }
 
 body {
+    margin: 0px;
     -webkit-user-select: none;
     box-shadow: 5px 5px 20px black;
     position: absolute;
@@ -49,6 +50,7 @@ body {
 
 #game-screen {
     position: absolute;
+    overflow: hidden;
     width: 1024px;
     height: 600px;
     display: none;
