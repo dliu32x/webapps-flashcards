@@ -599,8 +599,6 @@ var license_init,
     window.addEventListener('load', function () {
 	var App = new FlashCards();
 	App.init();
-	//hack to get active state to work on webkit
-	this.touchstart = function (e) {};
     }, false);
 
 }());
